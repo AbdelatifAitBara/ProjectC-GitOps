@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: 
+    - host: aa5c73defec0e47bc98d63a9bde8c8bc-dfb380ab2ab7b9f1.elb.eu-west-1.amazonaws.com
       http:
         paths:
         - path: /wordpress
