@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress
+  namespace: wordpress
 spec:
   replicas: 2
   selector:
@@ -44,6 +45,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: wordpress-service
+  namespace: wordpress
 spec:
   type: ClusterIP
   selector:
