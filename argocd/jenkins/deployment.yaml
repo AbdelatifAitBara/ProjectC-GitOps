@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: lotfi
+  namespace: Canari
   creationTimestamp: null
   labels:
     app: nginx
@@ -24,4 +24,7 @@ spec:
         ports:
         - containerPort: 80
         resources: {}
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
 status: {}
