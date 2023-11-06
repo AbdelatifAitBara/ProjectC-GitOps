@@ -12,7 +12,7 @@ spec:
   replicas: 4
   selector:
     matchLabels:
-      app: nginx
+      app: sabrina
   strategy: {}
   template:
     metadata:
