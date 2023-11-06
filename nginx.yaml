@@ -7,7 +7,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: nginx
-  name: nginx
+  name: nginx-test
 spec:
   replicas: 4
   selector:
@@ -37,14 +37,14 @@ metadata:
   creationTimestamp: null
   labels:
     app: nginx
-  name: nginx
+  name: nginx-test
 spec:
   ports:
   - port: 80
     protocol: TCP
     targetPort: 80
   selector:
-    app: nginx
+    app: nginx-test
   type: ClusterIP
 status:
   loadBalancer: {}
