@@ -15,4 +15,7 @@ spec:
             name: nginx
             port:
               number: 80
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
   ingressClassName: nginx
