@@ -1,0 +1,88 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: test
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+	
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: test
+  creationTimestamp: null
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: test
+  creationTimestamp: null
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  type: ClusterIP
+status:
+  loadBalancer: {}
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: test
+  name: myingress
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: automatically
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+  rules:
+  - host: ad807005ecf8b4ce59d2ef74d07513bf-40f234c60ccce330.elb.eu-west-1.amazonaws.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx
+            port:
+              number: 80
+  ingressClassName: nginx
