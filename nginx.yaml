@@ -8,10 +8,10 @@ metadata:
     app: nginx
   name: nginx
 spec:
-  replicas: 4
+  replicas: 8
   selector:
     matchLabels:
-      app: hoda
+      app: nginx
   strategy: {}
   template:
     metadata:
@@ -36,7 +36,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: nginx
-  name: nginx
+  name: sabrina-svc
 spec:
   ports:
   - port: 80
