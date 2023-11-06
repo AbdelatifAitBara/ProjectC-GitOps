@@ -25,7 +25,7 @@ spec:
               mountPath: /var/www/html
           env:
             - name: WORDPRESS_DB_HOST
-              value: mysql-service.default.svc.cluster.local
+              value: mysql-service
             - name: WORDPRESS_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -47,10 +47,13 @@ metadata:
   name: wordpress-service
   namespace: wordpress
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: wordpress
   ports:
     - name: http
       protocol: TCP
       port: 80
+      targetPort: 80
+      nodePort: 30007
+
