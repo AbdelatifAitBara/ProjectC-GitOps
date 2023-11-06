@@ -7,6 +7,12 @@ metadata:
     app: nginx
   name: nginx
 spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: automatically
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
   replicas: 7
   selector:
     matchLabels:
