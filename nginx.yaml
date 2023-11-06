@@ -56,12 +56,6 @@ metadata:
   namespace: test
   name: myingress
 spec:
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: automatically
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
   rules:
   - host: ad807005ecf8b4ce59d2ef74d07513bf-40f234c60ccce330.elb.eu-west-1.amazonaws.com
     http:
