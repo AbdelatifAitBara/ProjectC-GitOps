@@ -11,7 +11,7 @@ spec:
   replicas: 4
   selector:
     matchLabels:
-      app: sabrin
+      app: hoda
   strategy: {}
   template:
     metadata:
