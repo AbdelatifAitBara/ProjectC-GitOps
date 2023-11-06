@@ -40,7 +40,6 @@ spec:
           persistentVolumeClaim:
             claimName: wordpress-pvc
 ---
-
 kind: Service
 apiVersion: v1
 metadata:
