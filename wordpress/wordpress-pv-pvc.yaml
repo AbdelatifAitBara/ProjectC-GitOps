@@ -11,7 +11,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: manual
   hostPath:
-    path: "/home/ubuntu"
+    path: /home/ubuntu/project/wp-data 
 
 ---
 apiVersion: v1
