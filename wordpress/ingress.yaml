@@ -5,7 +5,7 @@ metadata:
   namespace: wordpress
 spec:
   rules:
-  - host:
+  - host: abdelatif-alb-1282074344.eu-west-1.elb.amazonaws.com
     http:
       paths:
       - path: /
