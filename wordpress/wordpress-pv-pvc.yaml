@@ -11,7 +11,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: manual
   hostPath:
-    path: "/var/www"
+    path: "/var/www/html"
 
 ---
 apiVersion: v1
