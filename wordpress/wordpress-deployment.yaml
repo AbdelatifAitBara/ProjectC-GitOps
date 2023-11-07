@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wordpress
-          image: wordpress:5.8.3-php7.4-apache
+          image: wordpress:latest
           ports:
             - containerPort: 80
               name: wordpress
@@ -40,6 +40,7 @@ spec:
           persistentVolumeClaim:
             claimName: wordpress-pvc
 ---
+
 kind: Service
 apiVersion: v1
 metadata:
@@ -53,5 +54,4 @@ spec:
     - name: http
       protocol: TCP
       port: 80
-
 
