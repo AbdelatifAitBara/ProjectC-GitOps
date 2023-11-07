@@ -6,10 +6,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: abdelatif-alb-1282074344.eu-west-1.elb.amazonaws.com
+    - host: abdelatif-alb-1180995065.eu-west-1.elb.amazonaws.com
       http:
         paths:
-        - path: /wordpress
+        - path: /
           pathType: Prefix
           backend:
             service:
