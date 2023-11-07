@@ -339,6 +339,7 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
     service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
     service.beta.kubernetes.io/aws-load-balancer-type: elb
+    alb.ingress.kubernetes.io/healthcheck-path:  /healthz
   labels:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
