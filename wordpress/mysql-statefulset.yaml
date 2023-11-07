@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: database
-        image: mysql:5.7.44
+        image: mysql:5.7-oracle
         args:
           - "--ignore-db-dir=lost+found"
         envFrom:
