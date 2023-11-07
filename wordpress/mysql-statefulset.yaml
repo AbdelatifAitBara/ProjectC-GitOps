@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: database
-        image: mysql:5-debian
+        image: mysql:5.7
         args:
           - "--ignore-db-dir=lost+found"
         envFrom:
