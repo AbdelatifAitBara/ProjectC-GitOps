@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wordpress
-          image: bitnami/wordpress:latest
+          image: bitnami/wordpress:6
           ports:
             - containerPort: 80
               name: wordpress
