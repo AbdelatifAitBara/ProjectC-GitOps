@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wordpress
-          image: beta-6.4-php8.2-apache
+          image: wordpress:beta-6.4-php8.2-apache
           ports:
             - containerPort: 80
               name: wordpress
