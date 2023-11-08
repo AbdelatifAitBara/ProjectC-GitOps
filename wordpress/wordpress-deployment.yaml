@@ -32,9 +32,9 @@ spec:
                   name: mysql-secret
                   key: MYSQL_ROOT_PASSWORD
             - name: WORDPRESS_DB_USER
-              value: wordpress
+              value: root
             - name: WORDPRESS_DB_NAME
-              value: wordpress
+              value: mysql
       volumes:
         - name: wordpress-data
           persistentVolumeClaim:
