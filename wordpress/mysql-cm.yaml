@@ -2,9 +2,15 @@ apiVersion: v1
 kind: ConfigMap 
 metadata:
   name: mysql-config
-  namespace: wordpress
 data:
-  inidb.sql: |
-    CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'password';
-    GRANT ALL PRIVILEGES ON *.* TO 'new_user'@'localhost';
-    FLUSH PRIVILEGES;
+  init.sh: |
+    #!/bin/sh
+    echo "Initializing MySQL..."
+
+    # Create WordPress user
+    mysql -uroot -e "CREATE USER 'wordpress'@'%' IDENTIFIED BY 'password';"
+
+    # Grant privileges to WordPress user 
+    mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'wordpress'@'%' WITH GRANT OPTION;"
+
+    echo "MySQL initialized"
