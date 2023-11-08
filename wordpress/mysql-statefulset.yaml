@@ -29,15 +29,10 @@ spec:
         volumeMounts:
         - name: mysql-data
           mountPath: /var/lib/mysql
-        - name: config-volume
-          mountPath: /etc/mysql/conf.d
       volumes:
           - name: mysql-data
             persistentVolumeClaim:
               claimName: mysql-pvc
-          - name: config-volume
-            configMap:
-              name: mysql-configmap
 
 
 
