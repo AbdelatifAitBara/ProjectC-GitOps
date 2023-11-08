@@ -4,13 +4,8 @@ metadata:
   name: mysql-config
 data:  # store initial SQL commands
   init.sql: |
-    CREATE USER 'robin'@'%' IDENTIFIED BY 'abcd1234567';
-    CREATE DATABASE IF NOT EXISTS wordpress;
-    USE wordpress;
-    
-    CREATE TABLE configs(
-        task_id VARCHAR(124) NOT NULL,
-        PRIMARY KEY (task_id)
-    ) ENGINE=InnoDB;
-    
-    GRANT ALL ON main.* TO 'robin'@'%';
+    # USE ROOT AND PASSWORD TO CRERATE NEW USER AND WORDPRESS DATABASE
+    CREATE USER 'wordpress'@'%' IDENTIFIED BY 'password';
+    CREATE DATABASE wordpress;
+    GRANT ALL ON wordpress.* TO 'wordpress'@'%';
+    FLUSH PRIVILEGES
