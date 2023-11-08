@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: product-ingress
+  name: ingress
 spec: 
   rules:
     - host: abdelatif-alb-2136874940.eu-west-1.elb.amazonaws.com
