@@ -8,9 +8,9 @@ data:
     echo "Initializing MySQL..."
 
     # Create WordPress user
-    mysql -uroot -e "CREATE USER 'wordpress'@'%' IDENTIFIED BY 'password';"
+    mysql -umysql -e "CREATE USER 'wordpress'@'%' IDENTIFIED BY 'password';"
 
     # Grant privileges to WordPress user 
-    mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'wordpress'@'%' WITH GRANT OPTION;"
+    mysql -umysql -e "GRANT ALL PRIVILEGES ON *.* TO 'wordpress'@'%' WITH GRANT OPTION;"
 
     echo "MySQL initialized"
