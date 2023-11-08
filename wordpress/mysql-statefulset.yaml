@@ -37,7 +37,7 @@ spec:
               claimName: mysql-pvc
           - name: config-volume
             configMap:
-              name: mysql-configmap
+              name: mysql-config
 
 
 
