@@ -4,7 +4,8 @@ metadata:
   name: mysql-config
   namespace: wordpress
 data:
-  my.cnf: |
-    [mysqld]
-    user=admin
-    password=password
+  inidb.sql: |
+    CREATE DATABASE wordpress;
+    CREATE USER 'wordpress'@'%' IDENTIFIED BY 'wordpress';
+    GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'%';
+    FLUSH PRIVILEGES;
