@@ -38,6 +38,7 @@ spec:
           - name: config-volume
             configMap:
               name: mysql-config
+              defaultMode: 0777
 
 
 
