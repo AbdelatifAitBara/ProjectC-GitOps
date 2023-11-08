@@ -4,7 +4,6 @@ metadata:
   name: mysql-config
 data:  # store initial SQL commands
   init.sql: |
-    # USE ROOT AND PASSWORD TO CRERATE NEW USER AND WORDPRESS DATABASE
     CREATE USER 'wordpress'@'%' IDENTIFIED BY 'password';
     CREATE DATABASE wordpress;
     GRANT ALL ON wordpress.* TO 'wordpress'@'%';
