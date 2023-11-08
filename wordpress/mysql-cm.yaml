@@ -5,7 +5,6 @@ metadata:
   namespace: wordpress
 data:
   inidb.sql: |
-    CREATE DATABASE wordpress;
-    CREATE USER 'wordpress'@'%' IDENTIFIED BY 'wordpress';
-    GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'%';
+    CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'password';
+    GRANT ALL PRIVILEGES ON *.* TO 'new_user'@'localhost';
     FLUSH PRIVILEGES;
