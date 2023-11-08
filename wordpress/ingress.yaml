@@ -1,18 +1,39 @@
-apiVersion: networking.k8s.io/v1   
+apiVersion: networking.k8s.io/v1    
 kind: Ingress
 metadata:
-  name: ingress 
-  annotations:
+  name: ingress
+  annotations:  
     nginx.ingress.kubernetes.io/rewrite-target: /
-spec:  
+spec:    
   rules:
-  - http:
+  - http:  
       paths:
-      - path: /(add_product|delete_product|get_product/?|update_product)
-        pathType: Prefix 
+      - path: /add_product
+        pathType: Prefix
+        backend:
+          service:
+            name: product-service 
+            port:    
+              number: 8080
+      - path: /delete_product 
+        pathType: Prefix
         backend:  
           service:
             name: product-service
-            port:   
+            port:     
+              number: 8080 
+      - path: /get_product
+        pathType: Prefix 
+        backend:   
+          service:
+            name: product-service
+            port:     
+              number: 8080
+      - path: /update_product
+        pathType: Prefix
+        backend:  
+          service: 
+            name: product-service
+            port:     
               number: 8080
   ingressClassName: nginx
