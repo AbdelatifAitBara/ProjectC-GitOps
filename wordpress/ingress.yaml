@@ -8,8 +8,8 @@ spec:
   rules:
     - http:
         paths:
-        - path: /wordpress
-          pathType: Exact
+        - path: /
+          pathType: Prefix
           backend:
             service:
               name: wordpress-service
