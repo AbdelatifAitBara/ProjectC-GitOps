@@ -9,7 +9,7 @@ spec:
     - http:
         paths:
         - path: /wordpress
-          pathType: Prefix
+          pathType: Exact
           backend:
             service:
               name: wordpress-service
