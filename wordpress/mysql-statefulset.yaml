@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mysql
+  name: mysql 
   namespace: wordpress
   labels:
     app: mysql
 spec:
   replicas: 1
   serviceName: mysql
-  selector:
+  selector: 
     matchLabels:
       app: mysql
   template:
@@ -16,20 +16,29 @@ spec:
       labels:
         app: mysql
     spec:
+      initContainers:
+      - name: init-mysql
+        image: mysql:5.7
+        command: ["mysql", "-e","ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';"]
+        envFrom:
+          - secretRef: 
+              name: mysql-secret
+        volumeMounts:
+        - name: mysql-data 
+          mountPath: /var/lib/mysql
       containers:
       - name: database
-        image: mysql:5.7
-        args:
-          - "--ignore-db-dir=lost+found"
+        image: mysql:5.7 
+        args: ["--ignore-db-dir=lost+found"]
         envFrom:
           - secretRef:
-              name: mysql-secret
+              name: mysql-secret 
         ports:
         - containerPort: 3306
         volumeMounts:
         - name: mysql-data
           mountPath: /var/lib/mysql
       volumes:
-          - name: mysql-data
-            persistentVolumeClaim:
-              claimName: mysql-pvc
+      - name: mysql-data
+        persistentVolumeClaim:
+          claimName: mysql-pvc
