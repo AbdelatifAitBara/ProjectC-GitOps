@@ -8,7 +8,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /microservice-product/(add_product|delete_product|get_product/?|update_product)
+      - path: /(add_product|delete_product|get_product/?|update_product)
         pathType: Prefix 
         backend:  
           service:
