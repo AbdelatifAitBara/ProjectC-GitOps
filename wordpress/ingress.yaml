@@ -8,32 +8,11 @@ spec:
   rules:
   - http:  
       paths:
-      - path: /add_product
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: product-service 
             port:    
-              number: 8080
-      - path: /delete_product 
-        pathType: Prefix
-        backend:  
-          service:
-            name: product-service
-            port:     
-              number: 8080 
-      - path: /get_product
-        pathType: Prefix 
-        backend:   
-          service:
-            name: product-service
-            port:     
-              number: 8080
-      - path: /update_product
-        pathType: Prefix
-        backend:  
-          service: 
-            name: product-service
-            port:     
               number: 8080
   ingressClassName: nginx
