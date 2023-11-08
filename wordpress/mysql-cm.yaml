@@ -1,10 +1,16 @@
 apiVersion: v1
-kind: ConfigMap 
+kind: ConfigMap
 metadata:
   name: mysql-config
-data:
-  init.sh: |
-    #!/bin/sh
-    echo "Initializing MySQL..."
-    CREATE USER 'first_user'@'%' IDENTIFIED BY '111' ;
-    CREATE USER 'second_user'@'%' IDENTIFIED BY '222' ;
+data:  # store initial SQL commands
+  init.sql: |
+    CREATE USER 'robin'@'%' IDENTIFIED BY 'abcd1234567';
+    CREATE DATABASE IF NOT EXISTS wordpress;
+    USE wordpress;
+    
+    CREATE TABLE configs(
+        task_id VARCHAR(124) NOT NULL,
+        PRIMARY KEY (task_id)
+    ) ENGINE=InnoDB;
+    
+    GRANT ALL ON main.* TO 'robin'@'%';
