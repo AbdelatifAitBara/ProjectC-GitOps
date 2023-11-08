@@ -15,4 +15,12 @@ spec:
               name: wordpress-service
               port:
                 number: 80
+
+        - path: /product
+          pathType: Exact
+          backend:
+            service:
+              name: product-service
+              port:
+                number: 8080
   ingressClassName: nginx
