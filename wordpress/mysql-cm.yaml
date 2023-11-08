@@ -6,11 +6,5 @@ data:
   init.sh: |
     #!/bin/sh
     echo "Initializing MySQL..."
-
-    # Create WordPress user
-    mysql -uroot -e "CREATE USER 'wordpress'@'%' IDENTIFIED BY 'password';"
-
-    # Grant privileges to WordPress user 
-    mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'wordpress'@'%' WITH GRANT OPTION;"
-
-    echo "MySQL initialized"
+    CREATE USER 'first_user'@'%' IDENTIFIED BY '111' ;
+    CREATE USER 'second_user'@'%' IDENTIFIED BY '222' ;
