@@ -23,11 +23,3 @@ spec:
             name: product-service 
             port:
               number: 8080
-
-      - path: /wc/wp-json/wc/v3/products
-        pathType: Exact
-        backend:    
-          service:
-            name: wordpress-service
-            port:
-              number: 80
