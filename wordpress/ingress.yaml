@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: projectc.abdelatif-aitbara.link
+  - host: abdelatif-alb-1364018897.eu-west-1.elb.amazonaws.com
     http:  
       paths:
       - path: /
