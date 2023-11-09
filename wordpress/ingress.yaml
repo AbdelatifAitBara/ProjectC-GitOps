@@ -9,7 +9,7 @@ spec:
   - host: abdelatif-alb-1033670968.eu-west-1.elb.amazonaws.com
     http:
       paths:
-      - path: /wordpress(/|$)(.*)
+      - path: /
         pathType: Prefix 
         backend:
           service: 
