@@ -5,7 +5,7 @@ metadata:
   namespace: wordpress
 spec:
   rules:
-  - host: stack.mytoolings.xyz
+  - host: abdelatif-alb-1033670968.eu-west-1.elb.amazonaws.com
     http:
       paths:
       - path: "/"
