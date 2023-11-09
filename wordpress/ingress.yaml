@@ -4,8 +4,7 @@ metadata:
   name: ingress
 spec: 
   rules:
-    - host: abdelatif-alb-1033670968.eu-west-1.elb.amazonaws.com
-      http: 
+    - http: 
         paths:
           - path: /wordpress
             backend:     
