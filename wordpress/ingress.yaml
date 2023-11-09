@@ -1,42 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: wordpress-ingress 
   namespace: wordpress
 spec:
+  ingressClassName: nginx
   rules:
   - host: abdelatif-alb-1033670968.eu-west-1.elb.amazonaws.com
     http:
       paths:
-      - path: "/"
-        pathType: Prefix
+      - path: /wordpress(/|$)(.*)
+        pathType: Prefix 
         backend:
-          service:
+          service: 
             name: wordpress
             port:
               number: 80
-  ingressClassName: nginx
-          
-
-
-
-#sapiVersion: networking.k8s.io/v1
-#skind: Ingress 
-#smetadata:
-#s  annotations:
-#s    nginx.ingress.kubernetes.io/rewrite-target: /$2
-#s  name: ingress
-#s  namespace: wordpress
-#sspec:
-#s  ingressClassName: nginx
-#s  rules:
-#s  - host: abdelatif-alb-1033670968.eu-west-1.elb.amazonaws.com
-#s    http:
-#s      paths:
-#s      - path: /wordpress(/|$)(.*)
-#s        pathType: Prefix
-#s        backend:
-#s          service:
-#s            name: wordpress-service
-#s            port:
-#s              number: 80
