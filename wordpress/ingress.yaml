@@ -10,15 +10,12 @@ spec:
     http:
       paths:
       - path: /
-        pathType: Prefix 
+        pathType: Exact
         backend:
           service: 
             name: wordpress-service
             port:
               number: 80
-  - host: abdelatif-alb-1033670968.eu-west-1.elb.amazonaws.com/microservices
-    http:
-      paths:
       - path: /
         pathType: Prefix 
         backend:
