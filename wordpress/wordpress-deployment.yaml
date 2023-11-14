@@ -30,9 +30,9 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: WORDPRESS_DB_PASSWORD
+                  key: MYSQL_ROOT_PASSWORD
             - name: WORDPRESS_DB_USER
-              value: wordpress
+              value: root
             - name: WORDPRESS_DB_NAME
               value: wordpress
       volumes:
