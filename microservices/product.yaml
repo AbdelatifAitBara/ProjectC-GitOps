@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: product
   name: product
@@ -14,12 +13,11 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: product
     spec:
       containers:
-      - image: abdelatifaitbara/product:alpha
+      - image: abdelatifaitbara/product:alpha1
         name: product
         ports:
         - containerPort: 8080
@@ -29,7 +27,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
   labels:
     app: product
   name: product-service
