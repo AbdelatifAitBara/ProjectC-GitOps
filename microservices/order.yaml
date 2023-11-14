@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: order
   name: order
@@ -14,12 +13,11 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: order
     spec:
       containers:
-      - image: abdelatifaitbara/order:alpha
+      - image: abdelatifaitbara/order:alpha2
         name: order
         ports:
         - containerPort: 9090
@@ -29,7 +27,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
   labels:
     app: order
   name: order-service
