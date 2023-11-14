@@ -17,7 +17,7 @@ spec:
         app: order
     spec:
       containers:
-      - image: abdelatifaitbara/order:alpha2
+      - image: abdelatifaitbara/order:alpha3
         name: order
         ports:
         - containerPort: 9090

@@ -37,3 +37,8 @@ spec:
             name: order-service 
             port:
               number: 9090
+
+  tls:
+    - hosts:
+      - projectc.abdelatif-aitbara.link
+      secretName: wordpress-tls
