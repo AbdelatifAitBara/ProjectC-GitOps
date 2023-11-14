@@ -40,7 +40,8 @@ spec:
             port:
               number: 9090
 
-  tls:
-    - hosts:
-      - projectc.abdelatif-aitbara.link
-      secretName: letsencrypt-production
+#  tls:
+#    - hosts:
+#      - projectc.abdelatif-aitbara.link
+#      secretName: letsencrypt-production
+#
