@@ -1,7 +1,8 @@
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: letsencrypt-prod
+  name: letsencrypt-prod*
+  namespace: wordpress
 spec:
   acme:
     email: aait-bara@thenuumfactory.fr
