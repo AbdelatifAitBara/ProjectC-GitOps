@@ -4,7 +4,7 @@ metadata:
   name: mysql-config
 data:  # store initial SQL commands
   init.sql: |
-    CREATE USER 'wordpress'@'%' IDENTIFIED BY 'password';
+    CREATE USER 'wordpress'@'%' IDENTIFIED BY {{ WORDPRESS_DB_PASSWORD }};
     CREATE DATABASE wordpress;
     GRANT ALL ON wordpress.* TO 'wordpress'@'%';
     FLUSH PRIVILEGES
