@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: ingress
   namespace: wordpress
-  annotations:
-    #cert-manager.io/issuer: "letsencrypt-production"
 spec:
   ingressClassName: nginx
   rules:
@@ -40,8 +38,7 @@ spec:
             port:
               number: 9090
 
-#  tls:
-#    - hosts:
-#      - projectc.abdelatif-aitbara.link
-#      secretName: letsencrypt-production
-#
+  tls:
+    - hosts:
+      - projectc.abdelatif-aitbara.link
+      secretName: projectc-app-tls
