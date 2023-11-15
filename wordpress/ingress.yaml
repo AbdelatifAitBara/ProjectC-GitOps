@@ -9,7 +9,8 @@ spec:
   tls:
   - hosts:
     - wp.abdelatif-aitbara.link
-    secretName: wordpress/my-tls-secret
+    secretName: my-tls-secret
+    namespace: wordpress
   ingressClassName: nginx
   rules:
   - host: wp.abdelatif-aitbara.link	
