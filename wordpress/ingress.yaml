@@ -3,7 +3,13 @@ kind: Ingress
 metadata:
   name: ingress
   namespace: wordpress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
+  tls:
+  - hosts:
+    - projectc.abdelatif-aitbara.link
+    secretName: projectc-app-tls
   ingressClassName: nginx
   rules:
   - host: projectc.abdelatif-aitbara.link
@@ -37,8 +43,3 @@ spec:
             name: order-service 
             port:
               number: 9090
-
-  tls:
-    - hosts:
-      - projectc.abdelatif-aitbara.link
-      secretName: projectc-app-tls
