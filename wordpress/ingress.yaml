@@ -3,13 +3,7 @@ kind: Ingress
 metadata:
   name: ingress
   namespace: wordpress
-  annotations:
-    cert-manager.io/issuer: "letsencrypt-issuer"
 spec:
-  tls:
-  - hosts:
-    - wp.abdelatif-aitbara.link
-    secretName: new-wordpress-tls
   ingressClassName: nginx
   rules:
   - host: wp.abdelatif-aitbara.link	
