@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: ingress
   namespace: wordpress
+  
 spec:
   ingressClassName: nginx
   rules:

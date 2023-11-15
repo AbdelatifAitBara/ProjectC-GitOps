@@ -3,5 +3,5 @@
 - Deploy WordPress = ✔
 - Ingress for WP = ✔
 - Deploy Microservices = In Progress.....🔴
-
+- Test
 
