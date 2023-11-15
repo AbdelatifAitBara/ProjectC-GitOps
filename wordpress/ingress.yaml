@@ -4,13 +4,12 @@ metadata:
   name: ingress
   namespace: wordpress
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-issuer
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/issuer: letsencrypt-issuer-wordpress
 spec:
   tls:
   - hosts:
     - wp.abdelatif-aitbara.link
-    secretName: my-tls-secret
+    secretName: lets-encrypt-secret-wordpress
   ingressClassName: nginx
   rules:
   - host: wp.abdelatif-aitbara.link	
