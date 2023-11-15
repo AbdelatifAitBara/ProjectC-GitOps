@@ -359,7 +359,7 @@ spec:
     name: http
     port: 80
     protocol: TCP
-    targetPort: https
+    targetPort: http
     nodePort: 32000
   - appProtocol: https
     name: https
