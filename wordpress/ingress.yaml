@@ -5,6 +5,7 @@ metadata:
   namespace: wordpress
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-issuer
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   tls:
   - hosts:
