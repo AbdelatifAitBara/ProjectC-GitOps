@@ -396,7 +396,7 @@ spec:
   type: ClusterIP
 ---
 apiVersion: apps/v1
-kind: DaemonSet
+kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/component: controller
