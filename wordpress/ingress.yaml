@@ -4,7 +4,7 @@ metadata:
   name: ingress
   namespace: wordpress
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt-issuer
 spec:
   tls:
   - hosts:
