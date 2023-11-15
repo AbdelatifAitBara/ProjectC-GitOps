@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
     - projetc.abdelatif-aitbara.link	
-    secretName: lets-encrypt-secret-wordpress
+    secretName: lets-encrypt-secret-wordpress-from-ingress
   ingressClassName: nginx
   rules:
   - host: projetc.abdelatif-aitbara.link	
