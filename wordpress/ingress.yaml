@@ -12,7 +12,7 @@ spec:
     secretName: lets-encrypt-secret-wordpress
   ingressClassName: nginx
   rules:
-  - host: wp.abdelatif-aitbara.link	
+  - host: projetc.abdelatif-aitbara.link	
     http:  
       paths:
       - path: /
