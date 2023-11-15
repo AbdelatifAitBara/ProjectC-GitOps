@@ -8,8 +8,8 @@ metadata:
 spec:
   tls:
   - hosts:
-    - projectc.abdelatif-aitbara.link
-    secretName: projectc-app-tls
+    - wp.abdelatif-aitbara.link	
+    secretName: wp-app-tls
   ingressClassName: nginx
   rules:
   - host: projectc.abdelatif-aitbara.link
