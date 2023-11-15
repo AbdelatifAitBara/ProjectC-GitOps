@@ -12,7 +12,7 @@ spec:
     secretName: wp-app-tls
   ingressClassName: nginx
   rules:
-  - host: projectc.abdelatif-aitbara.link
+  - host: wp.abdelatif-aitbara.link	
     http:  
       paths:
       - path: /
