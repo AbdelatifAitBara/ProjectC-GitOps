@@ -340,6 +340,7 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
     service.beta.kubernetes.io/aws-load-balancer-type: elb
     alb.ingress.kubernetes.io/healthcheck-path:  /healthz
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:eu-west-1:019050461780:certificate/50999169-63f9-4f68-962f-fe6c08720689
     service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
   labels:
     app.kubernetes.io/component: controller
@@ -365,7 +366,7 @@ spec:
     name: https
     port: 443
     protocol: TCP
-    targetPort: https
+    targetPort: http
     nodePort: 32001
   selector:
     app.kubernetes.io/component: controller
