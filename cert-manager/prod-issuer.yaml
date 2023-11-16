@@ -1,13 +1,13 @@
 apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
+kind: Issuer
 metadata:
-  name: letsencrypt-issuer
+  name: letsencrypt-issuer-wordpress
   namespace: wordpress
 spec:
   acme:
     email: aait-bara@thenuumfactory.fr
     privateKeySecretRef:
-      name: letsencrypt-issuer-account-key-staging
+      name: lets-encrypt-secret-issuer
     server: https://acme-v02.api.letsencrypt.org/directory
     solvers:
     - http01:

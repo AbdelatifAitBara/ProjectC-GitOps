@@ -327,22 +327,6 @@ data:
 
   proxy-real-ip-cidr: "0.0.0.0/0"    
 
-  proxy-set-headers: "proxy_set_header Host $host;"      
-
-  client-max-body-size: "1m"
-  proxy-buffering: "off"
-
-  add-headers: |
-    add_header X-Frame-Options SAMEORIGIN;
-    add_header X-Content-Type-Options nosniff;    
-    add_header X-XSS-Protection "1; mode=block";
-
-  enable-modsecurity: "true" 
-  modsecurity-snippet: "SecRuleEngine On"
-
-  enable-owasp-modsecurity-crs: "true"
-
-  waf-debug-log: "false"
 ---
 apiVersion: v1
 kind: Service
