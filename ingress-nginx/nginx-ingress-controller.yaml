@@ -319,18 +319,22 @@ subjects:
   namespace: ingress-nginx
 ---
 apiVersion: v1
-data:
-  allow-snippet-annotations: "true"
-kind: ConfigMap
+kind: ConfigMap 
 metadata:
+  name: ingress-nginx-controller
+  namespace: ingress-nginx
   labels:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx 
     app.kubernetes.io/version: 1.8.2
-  name: ingress-nginx-controller
-  namespace: ingress-nginx
+data:
+  enable-modsecurity: "true"
+  enable-owasp-modsecurity-crs: "true" 
+  allow-snippet-annotations: "true"
+  modsecurity-snippet: |
+    SecRuleEngine On
 ---
 apiVersion: v1
 kind: Service
