@@ -331,6 +331,7 @@ metadata:
     app.kubernetes.io/version: 1.8.2
 data:
   enable-modsecurity: "true"
+  proxy-real-ip-cidr: "0.0.0.0/0"
   enable-owasp-modsecurity-crs: "true" 
   allow-snippet-annotations: "true"
   modsecurity-snippet: |
