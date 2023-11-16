@@ -7,10 +7,6 @@ metadata:
     cert-manager.io/issuer: letsencrypt-issuer-wordpress
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      allow-snippet-annotations: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   tls:
