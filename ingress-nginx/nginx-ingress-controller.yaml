@@ -319,59 +319,22 @@ subjects:
   namespace: ingress-nginx
 ---
 apiVersion: v1
-kind: ConfigMap
+kind: ConfigMap 
 metadata:
-  name: ingress-nginx-controller 
+  name: ingress-nginx-controller
   namespace: ingress-nginx
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/instance: ingress-nginx
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx 
+    app.kubernetes.io/version: 1.8.2
 data:
-
-  proxy-real-ip-cidr: "0.0.0.0/0"  
-  
-
-  client-max-body-size: "1m"
-  proxy-buffering: "off"
-
-  add-headers: |
-    add_header X-Frame-Options SAMEORIGIN;
-    add_header X-Content-Type-Options nosniff;  
-    add_header X-XSS-Protection "1; mode=block";
-
-  ssl-protocols: "TLSv1.2 TLSv1.3"
-  ssl-ciphers: "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384"
-
-  enable-modsecurity: "true" 
-  modsecurity-snippet: "SecRuleEngine On"
-
-  enable-owasp-modsecurity-crs: "true"
-
-  waf-debug-log: "off"
-
-  # Add configuration to disable external redirects
-  proxy-redirect-from: "" 
-  proxy-redirect-to: ""
-  proxy-redirect-source-range: ""
-
-  enable-modsecurity-crs: "true"
-
-  modsecurity-rules-sql-injection: "on" # Turn on SQLi ruleset
-
-  proxy-set-headers: "proxy_set_header Host $host;\nAccess-Control-Allow-Origin https://mydomain.com\nModSecResponse:'x'" # Log ModSec responses
-
-
-  proxy-buffer-size: "10k" # Limit buffer to prevent large queries  
-
-  modsecurity-rules-anomaly: "on" # Detect irregular patterns  
-
-  modsecurity-rules-dos: "on" # Rate limiting, etc to prevent DoS
-
-  
-  proxy-force-ranges: "true" # Enforce expected content types  
-
-  lua-repo-root: "/etc/nginx/lua" # Lua scripts for input validation
-
-  lua-package-path: "$lua_repo_root/access/?.lua;" # Example validation regex
-
-  db-instance-role: "restrictedDbRole" # Least privilege database account
+  enable-modsecurity: "true"
+  enable-owasp-modsecurity-crs: "true" 
+  allow-snippet-annotations: "true"
+  modsecurity-snippet: |
+    SecRuleEngine On
 ---
 apiVersion: v1
 kind: Service
