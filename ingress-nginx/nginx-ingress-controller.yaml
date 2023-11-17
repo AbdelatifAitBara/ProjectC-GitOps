@@ -330,7 +330,7 @@ metadata:
     app.kubernetes.io/part-of: ingress-nginx 
     app.kubernetes.io/version: 1.8.2
 data:
-  allow-snippet-annotations: "true"
+  allow-snippet-annotations: "true" 
   enable-modsecurity: "true"
   enable-owasp-modsecurity-crs: "true"
   modsecurity-snippet: |-
@@ -341,7 +341,8 @@ data:
       phase:2,\
       id:76000001,\
       severity:CRITICAL,\
-      msg:\'Possible Spring4Shell exploitation\'"
+      msg:\'Possible Spring4Shell exploitation\',\
+      method: '(POST|DELETE|UPDATE)'"
 
 
 ---
