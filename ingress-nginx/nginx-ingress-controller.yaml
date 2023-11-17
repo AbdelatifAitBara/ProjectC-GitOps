@@ -336,6 +336,12 @@ data:
   modsecurity-snippet: |-
     SecRuleEngine On
     SecRequestBodyAccess On
+    SecRule ARGS|ARGS_NAMES "\.classLoader\." "log,\
+      deny,\
+      phase:2,\
+      id:76000001,\
+      severity:CRITICAL,\
+      msg:\'Possible Spring4Shell exploitation\'"
 
 
 ---
