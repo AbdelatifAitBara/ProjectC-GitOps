@@ -17,7 +17,7 @@ spec:
         app: order
     spec:
       containers:
-      - image: abdelatifaitbara/order:v1.0.2
+      - image: abdelatifaitbara/order:2491fd8d68da3f55787a22f21bef07d6c230d456
         name: order
         ports:
         - containerPort: 9090
