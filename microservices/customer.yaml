@@ -17,7 +17,7 @@ spec:
         app: customer
     spec:
       containers:
-      - image: abdelatifaitbara/customer:v1.0.1
+      - image: abdelatifaitbara/customer:v1.0.2
         name: customer
         ports:
         - containerPort: 7070
