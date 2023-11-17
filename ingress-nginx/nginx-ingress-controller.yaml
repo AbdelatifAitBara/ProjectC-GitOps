@@ -329,12 +329,6 @@ metadata:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx 
     app.kubernetes.io/version: 1.8.2
-data:
-  enable-modsecurity: "true"
-  enable-owasp-modsecurity-crs: "true" 
-  allow-snippet-annotations: "true"
-  modsecurity-snippet: |
-    SecRuleEngine On
 ---
 apiVersion: v1
 kind: Service
