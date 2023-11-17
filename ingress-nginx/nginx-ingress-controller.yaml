@@ -333,6 +333,9 @@ data:
   allow-snippet-annotations: "true"
   enable-modsecurity: "true"
   enable-owasp-modsecurity-crs: "true"
+  modsecurity-snippet: |-
+    SecRuleEngine On
+    SecRequestBodyAccess On
   
 ---
 apiVersion: v1
