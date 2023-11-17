@@ -319,18 +319,38 @@ subjects:
   namespace: ingress-nginx
 ---
 apiVersion: v1
-data:
-  allow-snippet-annotations: "true"
 kind: ConfigMap
 metadata:
-  labels:
-    app.kubernetes.io/component: controller
-    app.kubernetes.io/instance: ingress-nginx
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
-    app.kubernetes.io/version: 1.8.2
-  name: ingress-nginx-controller
+  name: ingress-nginx-controller 
   namespace: ingress-nginx
+data:
+
+  proxy-real-ip-cidr: "0.0.0.0/0"  
+
+  proxy-set-headers: "proxy_set_header Host $host;"    
+
+  client-max-body-size: "1m"
+  proxy-buffering: "off"
+
+  add-headers: |
+     add_header X-Frame-Options SAMEORIGIN;
+     add_header X-Content-Type-Options nosniff;  
+     add_header X-XSS-Protection "1; mode=block";
+
+  ssl-protocols: "TLSv1.2 TLSv1.3"
+  ssl-ciphers: "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384"
+
+  enable-modsecurity: "true" 
+  modsecurity-snippet: "SecRuleEngine On"
+
+  enable-owasp-modsecurity-crs: "true"
+
+  waf-debug-log: "off"
+
+  # Add configuration to disable external redirects
+  proxy-redirect-from: "" 
+  proxy-redirect-to: ""
+  proxy-redirect-source-range: ""
 ---
 apiVersion: v1
 kind: Service
