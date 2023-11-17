@@ -329,9 +329,6 @@ metadata:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx 
     app.kubernetes.io/version: 1.8.2
-
-
-
 ---
 apiVersion: v1
 kind: Service
