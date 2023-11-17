@@ -337,6 +337,8 @@ data:
     SecRuleEngine On
     SecRequestBodyAccess On
     SecRule METHOD "@rx .* " "id:'3005',phase:1,allow,nolog"
+    SecRule REQUEST_FILENAME "@streq /" \
+    "phase:1,nolog,pass,id:15000,ctl:ruleRemoveById=932160"
   
 ---
 apiVersion: v1
