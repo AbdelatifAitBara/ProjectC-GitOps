@@ -326,16 +326,15 @@ metadata:
 data:
 
   proxy-real-ip-cidr: "0.0.0.0/0"  
-
-  proxy-set-headers: "proxy_set_header Host $host;"    
+  
 
   client-max-body-size: "1m"
   proxy-buffering: "off"
 
   add-headers: |
-     add_header X-Frame-Options SAMEORIGIN;
-     add_header X-Content-Type-Options nosniff;  
-     add_header X-XSS-Protection "1; mode=block";
+    add_header X-Frame-Options SAMEORIGIN;
+    add_header X-Content-Type-Options nosniff;  
+    add_header X-XSS-Protection "1; mode=block";
 
   ssl-protocols: "TLSv1.2 TLSv1.3"
   ssl-ciphers: "TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384"
@@ -351,6 +350,28 @@ data:
   proxy-redirect-from: "" 
   proxy-redirect-to: ""
   proxy-redirect-source-range: ""
+
+  enable-modsecurity-crs: "true"
+
+  modsecurity-rules-sql-injection: "on" # Turn on SQLi ruleset
+
+  proxy-set-headers: "proxy_set_header Host $host;\nAccess-Control-Allow-Origin https://mydomain.com\nModSecResponse:'x'" # Log ModSec responses
+
+
+  proxy-buffer-size: "10k" # Limit buffer to prevent large queries  
+
+  modsecurity-rules-anomaly: "on" # Detect irregular patterns  
+
+  modsecurity-rules-dos: "on" # Rate limiting, etc to prevent DoS
+
+  
+  proxy-force-ranges: "true" # Enforce expected content types  
+
+  lua-repo-root: "/etc/nginx/lua" # Lua scripts for input validation
+
+  lua-package-path: "$lua_repo_root/access/?.lua;" # Example validation regex
+
+  db-instance-role: "restrictedDbRole" # Least privilege database account
 ---
 apiVersion: v1
 kind: Service
