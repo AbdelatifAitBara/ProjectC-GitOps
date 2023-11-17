@@ -17,7 +17,7 @@ spec:
         app: customer
     spec:
       containers:
-      - image: abdelatifaitbara/customer:${GIT_COMMIT}
+      - image: abdelatifaitbara/customer:0227e81ea4e5f5f070a4b0faee5eec6116b27f3e${GIT_COMMIT}
         name: customer
         ports:
         - containerPort: 7070
