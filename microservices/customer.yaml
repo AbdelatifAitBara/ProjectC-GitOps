@@ -17,7 +17,7 @@ spec:
         app: customer
     spec:
       containers:
-      - image: abdelatifaitbara/customer:6dadf45011991ae61721d9bf52475ec79fe68dea
+      - image: abdelatifaitbara/customer:91ea73c62a1cd8ccb8aa8924b7028cb4ad78ef30
         name: customer
         ports:
         - containerPort: 7070
