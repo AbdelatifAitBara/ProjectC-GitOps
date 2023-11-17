@@ -336,10 +336,7 @@ data:
   modsecurity-snippet: |
     SecRuleEngine On
     SecRequestBodyAccess On
-    SecRule METHOD "@rx POST" "id:'3001',phase:1,allow,nolog"
-    SecRule METHOD "@rx DELETE" "id:'3002',phase:1,allow,nolog" 
-    SecRule METHOD "@rx GET" "id:'3003',phase:1,allow,nolog"
-    SecRule METHOD "@rx PUT" "id:'3004',phase:1,allow,nolog"
+    SecRule METHOD "@rx .* " "id:'3005',phase:1,allow,nolog"
   
 ---
 apiVersion: v1
