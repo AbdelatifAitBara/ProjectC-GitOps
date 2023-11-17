@@ -17,7 +17,7 @@ spec:
         app: customer
     spec:
       containers:
-      - image: abdelatifaitbara/customer:8cba25c0c74c23322699c950ca86edc46170867f2891a16009e2d6b621c6c80fa8f34c640c4b953c6389aba71e664aac1351bd1404874b4f70a783c70227e81ea4e5f5f070a4b0faee5eec6116b27f3e${GIT_COMMIT}
+      - image: abdelatifaitbara/customer:"9a4d88fc60f7f96ea1bec9bb161bac01523ef9f9"
         name: customer
         ports:
         - containerPort: 7070
