@@ -17,7 +17,7 @@ spec:
         app: product
     spec:
       containers:
-      - image: abdelatifaitbara/product:v1.0.2
+      - image: abdelatifaitbara/product:91ea73c62a1cd8ccb8aa8924b7028cb4ad78ef30
         name: product
         ports:
         - containerPort: 8080
