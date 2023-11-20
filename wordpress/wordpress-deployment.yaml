@@ -14,13 +14,6 @@ spec:
       labels:
         app: wordpress
     spec:
-      initContainers:
-        - name: install-woocommerce
-          image: wpcli/cli 
-          command: ["wp", "plugin", "install", "woocommerce", "--activate"] 
-          volumeMounts:
-            - name: wordpress-plugins
-              mountPath: /var/www/html/wp-content/plugins
       containers:
         - name: wordpress
           image: wordpress:latest
@@ -30,8 +23,6 @@ spec:
           volumeMounts:
             - name: wordpress-data
               mountPath: /var/www/html
-            - name: wordpress-plugins 
-              mountPath: /var/www/html/wp-content/plugins
           env:
             - name: WORDPRESS_DB_HOST
               value: mysql-service
@@ -48,8 +39,6 @@ spec:
         - name: wordpress-data
           persistentVolumeClaim:
             claimName: wordpress-pvc
-        - name: wordpress-plugins
-          emptyDir: {}
 ---
 
 kind: Service
