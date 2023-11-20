@@ -6,7 +6,7 @@ metadata:
   name: product
   namespace: wordpress
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: product
