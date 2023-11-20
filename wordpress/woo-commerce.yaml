@@ -1,0 +1,32 @@
+apiVersion: batch/v1 
+kind: Job
+metadata:
+  name: install-woocommerce
+spec:
+  template:
+    spec:  
+      containers:
+      - name: woocommerce-installer
+        image: wordpress:latest
+        command: ["/bin/bash"]
+        args: ["/install-woocommerce.sh"]  
+        volumeMounts:
+        - mountPath: /var/www/html  
+          name: wordpress-data
+      restartPolicy: Never
+      volumes:
+      - name: wordpress-data
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
+
+  scripts:
+  - name: install-woocommerce.sh
+    image: alpine:latest
+    command: ["/bin/sh"]
+    args: ["-c", 
+      "wget https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip; 
+      unzip woocommerce.latest-stable.zip;
+      mv woocommerce /var/www/html/wp-content/plugins/;
+      wp plugin activate woocommerce;
+      wp admin.php?page=wc-setup"
+    ]
