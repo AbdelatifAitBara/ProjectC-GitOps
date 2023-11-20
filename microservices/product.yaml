@@ -21,6 +21,11 @@ spec:
         name: product
         ports:
         - containerPort: 8080
+        imagePullSecrets:
+        - name: ecr-secret # reference the secret
+      nodeSelector:
+        kubernetes.io/os: linux
+      securityContext: {}
 ---
 
 apiVersion: v1
