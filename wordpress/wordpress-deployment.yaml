@@ -16,7 +16,7 @@ spec:
     spec:
       initContainers:
         - name: install-woocommerce
-          image: wpcli/cli:2.5.0-php7.4-fpm-alpine 
+          image: wpcli/cli 
           command: ["wp", "plugin", "install", "woocommerce", "--activate"] 
           volumeMounts:
             - name: wordpress-plugins
