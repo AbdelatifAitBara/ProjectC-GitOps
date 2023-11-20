@@ -35,6 +35,13 @@ spec:
               value: root
             - name: WORDPRESS_DB_NAME
               value: wordpress
+          resources:
+            requests:
+              cpu: 100m 
+              memory: 128Mi  
+            limits:
+              cpu: 200m
+              memory: 256Mi
       volumes:
         - name: wordpress-data
           persistentVolumeClaim:
