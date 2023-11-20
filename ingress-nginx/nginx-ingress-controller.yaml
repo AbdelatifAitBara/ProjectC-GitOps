@@ -437,13 +437,6 @@ spec:
         - --validating-webhook=:8443
         - --validating-webhook-certificate=/usr/local/certificates/cert
         - --validating-webhook-key=/usr/local/certificates/key
-        resources: 
-          limits:
-            cpu: "100m"
-            memory: "128Mi"
-          requests:
-            cpu: "50m"
-            memory: "64Mi"
         env:
         - name: POD_NAME
           valueFrom:
@@ -543,13 +536,6 @@ spec:
         - --host=ingress-nginx-controller-admission,ingress-nginx-controller-admission.$(POD_NAMESPACE).svc
         - --namespace=$(POD_NAMESPACE)
         - --secret-name=ingress-nginx-admission
-        resources: 
-          limits:
-            cpu: "100m"
-            memory: "128Mi"
-          requests:
-            cpu: "50m"
-            memory: "64Mi"
         env:
         - name: POD_NAMESPACE
           valueFrom:
@@ -599,13 +585,6 @@ spec:
         - --patch-mutating=false
         - --secret-name=ingress-nginx-admission
         - --patch-failure-policy=Fail
-        resources: 
-          limits:
-            cpu: "100m"
-            memory: "128Mi"
-          requests:
-            cpu: "50m"
-            memory: "64Mi"
         env:
         - name: POD_NAMESPACE
           valueFrom:
