@@ -17,7 +17,7 @@ spec:
         app: customer
     spec:
       containers:
-      - image: 019050461780.dkr.ecr.eu-west-1.amazonaws.com/abdelatif-ecr-customer:1ad66a3ffa81092e98c364e4c34dfdf49b9ee04d
+      - image: 019050461780.dkr.ecr.eu-west-1.amazonaws.com/abdelatif-ecr-customer:e9859155685d12968cb5731b316b7c203755e665
         name: customer
         ports:
         - containerPort: 7070
