@@ -11,4 +11,4 @@ spec:
     kind: Deployment
     name: wordpress
     subresouce: scale
-  targetCPUUtilizationPercentage: 50
+  targetMemoryUtilizationPercentage: 50
