@@ -23,6 +23,8 @@ spec:
           volumeMounts:
             - name: wordpress-data
               mountPath: /var/www/html
+            - name: config-volume
+              mountPath: /var/www/html/wp-config.php
           resources:
             limits:
               cpu: 500m
@@ -46,6 +48,9 @@ spec:
         - name: wordpress-data
           persistentVolumeClaim:
             claimName: wordpress-pvc
+        - name: config-volume
+          configMap:
+            name: wp-config  
 ---
 
 kind: Service
