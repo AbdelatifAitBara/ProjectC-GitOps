@@ -24,7 +24,7 @@ spec:
             - name: wordpress-data
               mountPath: /var/www/html
             - name: config-volume
-              mountPath: /var/www/html/wp-config.php
+              mountPath: /var/www/html
           resources:
             limits:
               cpu: 500m
