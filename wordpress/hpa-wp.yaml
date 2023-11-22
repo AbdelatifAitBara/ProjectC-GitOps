@@ -4,7 +4,7 @@ metadata:
   name: wordpress
   namespace: wordpress
 spec:
-  maxReplicas: 10
+  maxReplicas: 6
   minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
