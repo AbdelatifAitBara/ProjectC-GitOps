@@ -17,7 +17,7 @@ spec:
         app: product
     spec:
       containers:
-      - image: 019050461780.dkr.ecr.eu-west-1.amazonaws.com/abdelatif-ecr-product:8f6b0467b88f791833507c644fb4d558c5f57063
+      - image: 019050461780.dkr.ecr.eu-west-1.amazonaws.com/abdelatif-ecr-product:75f610aae93225ff8c39b68b855b39bfd5ab939e
         name: product
         ports:
         - containerPort: 8080
