@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: wp-config
+  name: config
 data:
   configContent: |
     configContent="

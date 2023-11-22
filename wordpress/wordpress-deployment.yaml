@@ -20,13 +20,11 @@ spec:
         command: ["/bin/sh", "-c"] 
         args: ["echo -e $(cat /config/configContent) >> /var/www/html/wp-config.php"]
         volumeMounts:
-        - mountPath: /var/www/html/ 
-          name: wp-data  
         - name: config-vol
           mountPath: /config
           subPath: configContent
           configMap:
-            name: wp-config
+            name: config
       containers:
         - name: wordpress
           image: wordpress:latest
