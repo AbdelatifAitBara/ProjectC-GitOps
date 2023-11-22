@@ -14,17 +14,6 @@ spec:
       labels:
         app: wordpress
     spec:
-      initContainers:
-      - name: modify-wp-config
-        image: alpine
-        command: ["/bin/sh", "-c"] 
-        args: ["echo -e $(cat /config/configContent) >> /var/www/html/wp-config.php"]
-        volumeMounts:
-        - name: config-vol
-          mountPath: /config
-          subPath: configContent
-          configMap:
-            name: config
       containers:
         - name: wordpress
           image: wordpress:latest
