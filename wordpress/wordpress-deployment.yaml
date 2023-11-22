@@ -5,7 +5,7 @@ metadata:
   name: wordpress
   namespace: wordpress
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: wordpress
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wordpress
-          image: wordpress:6.4-php8.2-apache
+          image: wordpress:latest
           ports:
             - containerPort: 80
               name: wordpress
