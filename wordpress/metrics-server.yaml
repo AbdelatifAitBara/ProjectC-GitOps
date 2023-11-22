@@ -4,7 +4,7 @@ metadata:
   labels:
     k8s-app: metrics-server
   name: metrics-server
-  namespace: wordpress
+  namespace: kube-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -55,7 +55,7 @@ metadata:
   labels:
     k8s-app: metrics-server
   name: metrics-server-auth-reader
-  namespace: wordpress
+  namespace: kube-system
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -63,7 +63,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: metrics-server
-  namespace: wordpress
+  namespace: kube-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -78,7 +78,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: metrics-server
-  namespace: wordpress
+  namespace: kube-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -93,7 +93,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: metrics-server
-  namespace: wordpress
+  namespace: kube-system
 ---
 apiVersion: v1
 kind: Service
@@ -101,7 +101,7 @@ metadata:
   labels:
     k8s-app: metrics-server
   name: metrics-server
-  namespace: wordpress
+  namespace: kube-system
 spec:
   ports:
   - name: https
@@ -117,7 +117,7 @@ metadata:
   labels:
     k8s-app: metrics-server
   name: metrics-server
-  namespace: wordpress
+  namespace: kube-system
 spec:
   selector:
     matchLabels:
@@ -164,7 +164,7 @@ spec:
             cpu: 100m
             memory: 200Mi
           limits:
-            cpu: 300m
+            cpu: 100m
             memory: 200Mi
         securityContext:
           allowPrivilegeEscalation: false
@@ -194,6 +194,6 @@ spec:
   insecureSkipTLSVerify: true
   service:
     name: metrics-server
-    namespace: wordpress
+    namespace: kube-system
   version: v1beta1
   versionPriority: 100
