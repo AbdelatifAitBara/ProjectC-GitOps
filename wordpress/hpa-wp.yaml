@@ -1,19 +1,13 @@
-apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: HPA
   namespace: wordpress
+  name: HPA-WP
 spec:
+  maxReplicas: 7
+  minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: wordpress
-  minReplicas: 1  # Minimum number of replicas
-  maxReplicas: 10  # Maximum number of replicas
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 80
+    namespace: wordpress
+  targetCPUUtilizationPercentage: 50
