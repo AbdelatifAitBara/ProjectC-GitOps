@@ -17,7 +17,7 @@ spec:
         app: order
     spec:
       containers:
-      - image: 019050461780.dkr.ecr.eu-west-1.amazonaws.com/abdelatif-ecr-order:0aae5869cf2daf8fb2510115cd342eb1e9b1ccca
+      - image: 019050461780.dkr.ecr.eu-west-1.amazonaws.com/abdelatif-ecr-order:ea5fbe0704a5293b716751d771b08be7f2bf9351
         name: order
         ports:
         - containerPort: 9090
