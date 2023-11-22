@@ -23,6 +23,10 @@ spec:
           volumeMounts:
             - name: wordpress-data
               mountPath: /var/www/html
+          resources:
+            limits:
+              cpu: 500m
+              memory: 1Gi
           env:
             - name: WORDPRESS_DB_HOST
               value: mysql-service

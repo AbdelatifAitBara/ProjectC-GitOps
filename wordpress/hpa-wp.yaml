@@ -1,8 +1,8 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  creationTimestamp: null
   name: wordpress
+  namespace: wordpress
 spec:
   maxReplicas: 10
   minReplicas: 1
