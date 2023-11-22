@@ -1,7 +1,8 @@
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   namespace: wordpress
-  name: HPA-WP
+  name: wordpress
 spec:
   maxReplicas: 7
   minReplicas: 1
@@ -9,5 +10,6 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: wordpress
-    namespace: wordpress
   targetCPUUtilizationPercentage: 50
+
+  
