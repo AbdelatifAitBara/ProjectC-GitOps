@@ -25,8 +25,8 @@ spec:
               mountPath: /var/www/html
           resources:
             limits:
-              cpu: 2000m
-              memory: 2Gi
+              cpu: 1600m
+              memory: 1.8Gi
             requests:
               cpu: 1500m
               memory: 1.7Gi
