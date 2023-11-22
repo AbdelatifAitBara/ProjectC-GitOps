@@ -10,6 +10,5 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: wordpress
+    subresouce: scale
   targetCPUUtilizationPercentage: 50
-
-  
