@@ -23,7 +23,7 @@ spec:
           - "--ignore-db-dir=lost+found"
         envFrom:
           - secretRef:
-              name: mysql-secret
+              name: mysql-secret-green
         ports:
         - containerPort: 3306
         volumeMounts:
