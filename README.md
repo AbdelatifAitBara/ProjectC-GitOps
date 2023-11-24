@@ -4,4 +4,4 @@
 - Ingress for WP       = ✔
 - Deploy Microservices = ✔
 - HAP                  = ✔
-
+- Test Blue/Green
