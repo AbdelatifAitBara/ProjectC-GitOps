@@ -4,7 +4,7 @@ metadata:
   labels:
     app: customer
   name: customer
-  namespace: wordpress
+  namespace: green
 spec:
   replicas: 1
   selector:
@@ -30,7 +30,7 @@ metadata:
   labels:
     app: customer
   name: customer-service
-  namespace: wordpress
+  namespace: green
 spec:
   ports:
   - port: 7070
