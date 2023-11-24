@@ -5,3 +5,4 @@
 - Deploy Microservices = ✔
 - HAP                  = ✔
 - Test Blue Deployment = ✔
+- Test Green
