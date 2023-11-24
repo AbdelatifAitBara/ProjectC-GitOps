@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+  namespace: blue
+data:  # store initial SQL commands
+  init.sql: |
+    CREATE USER 'wordpress'@'%' IDENTIFIED BY 'password';
+    CREATE DATABASE wordpress;
+    GRANT ALL ON wordpress.* TO 'wordpress'@'%';
+    FLUSH PRIVILEGES
