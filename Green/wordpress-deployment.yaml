@@ -51,7 +51,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: wordpress-service
+  name: wordpress-service-green
   namespace: green
 spec:
   type: ClusterIP
