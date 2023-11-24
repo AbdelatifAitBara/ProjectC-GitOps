@@ -638,6 +638,9 @@ webhooks:
   failurePolicy: Fail
   matchPolicy: Equivalent
   name: validate.nginx.ingress.kubernetes.io
+  namespaceSelector:
+    matchLabels:
+    ingress.kubernetes.io/enabled: "true"
   rules:
   - apiGroups:
     - networking.k8s.io
