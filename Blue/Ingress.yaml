@@ -25,7 +25,6 @@ spec:
         backend:
           service: 
             name: wordpress-service-blue
-            namespace: blue
             port:  
               number: 80
       - path: /customer
