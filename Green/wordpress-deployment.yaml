@@ -32,7 +32,7 @@ spec:
               memory: 1Gi
           env:
             - name: WORDPRESS_DB_HOST
-              value: mysql-service-green
+              value: mysql-service
             - name: WORDPRESS_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
