@@ -24,7 +24,7 @@ spec:
         pathType: Prefix
         backend:
           service: 
-            name: wordpress-service-blue
+            name: wordpress-service
             port:  
               number: 80
       - path: /customer
