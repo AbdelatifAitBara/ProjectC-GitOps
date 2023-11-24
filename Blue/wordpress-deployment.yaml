@@ -51,8 +51,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: wordpress-service-blue
-  namespace: blue
+  name: wordpress-service
 spec:
   type: ClusterIP
   selector:
