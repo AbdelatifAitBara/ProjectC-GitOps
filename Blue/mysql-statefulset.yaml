@@ -23,7 +23,7 @@ spec:
           - "--ignore-db-dir=lost+found"
         envFrom:
           - secretRef:
-              name: mysql-secret
+              name: mysql-secret-blue
         ports:
         - containerPort: 3306
         volumeMounts:
@@ -37,7 +37,7 @@ spec:
               claimName: mysql-pvc-blue
           - name: config-volume
             configMap:
-              name: mysql-config
+              name: mysql-config-blue
               defaultMode: 0777
 
 
