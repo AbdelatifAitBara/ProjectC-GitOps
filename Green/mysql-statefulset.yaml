@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mysql-green
-  namespace: wordpress
+  namespace: green
   labels:
     app: mysql
 spec:

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: mysql-pv-green
-  namespace: wordpress
+  namespace: green
 spec:
   storageClassName: do-block-storage
   capacity:
@@ -18,7 +18,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pvc-green
-  namespace: wordpress
+  namespace: green
 spec:
   storageClassName: do-block-storage
   accessModes:
