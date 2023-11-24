@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
-  namespace: wordpress
+  namespace: blue
   annotations:
     cert-manager.io/issuer: letsencrypt-issuer-wordpress
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -24,7 +24,7 @@ spec:
         pathType: Prefix
         backend:
           service: 
-            name: wordpress-service-green
+            name: wordpress-service-blue
             port:  
               number: 80
       - path: /customer
