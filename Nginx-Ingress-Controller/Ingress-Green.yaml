@@ -21,6 +21,7 @@ spec:
         backend:
           service: 
             name: wordpress-service-green
+            namespace: green
             port:  
               number: 80
       - path: /customer
