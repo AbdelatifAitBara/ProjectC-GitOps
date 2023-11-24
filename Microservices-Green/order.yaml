@@ -37,5 +37,6 @@ spec:
     targetPort: 9090
   selector:
     app: order
+    namespace: green
   type: ClusterIP
 status:

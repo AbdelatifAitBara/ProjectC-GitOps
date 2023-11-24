@@ -38,5 +38,6 @@ spec:
     targetPort: 7070
   selector:
     app: customer
+    namespace: green
   type: ClusterIP
 status:
