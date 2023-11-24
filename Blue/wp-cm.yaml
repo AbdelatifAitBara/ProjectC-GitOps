@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: config
+  name: config-blue
   namespace: blue
 data:
   configContent: |

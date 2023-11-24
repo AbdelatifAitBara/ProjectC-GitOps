@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mysql
+  name: mysql-blue
   namespace: blue
   labels:
     app: mysql
@@ -34,7 +34,7 @@ spec:
       volumes:
           - name: mysql-data
             persistentVolumeClaim:
-              claimName: mysql-pvc
+              claimName: mysql-pvc-blue
           - name: config-volume
             configMap:
               name: mysql-config

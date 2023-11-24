@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: wordpress-pv
+  name: wordpress-pv-blue
   namespace: blue
 spec:
   capacity:
@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: wordpress-pvc
+  name: wordpress-pvc-blue
   namespace: blue
 spec:
   accessModes:

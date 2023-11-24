@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wordpress
+  name: wordpress-green
   namespace: wordpress
 spec:
   replicas: 1
@@ -51,7 +51,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: wordpress-service
+  name: wordpress-service-green
   namespace: wordpress
 spec:
   type: ClusterIP

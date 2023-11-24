@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mysql
+  name: mysql-green
   namespace: wordpress
   labels:
     app: mysql
@@ -34,10 +34,10 @@ spec:
       volumes:
           - name: mysql-data
             persistentVolumeClaim:
-              claimName: mysql-pvc
+              claimName: mysql-pvc-green
           - name: config-volume
             configMap:
-              name: mysql-config
+              name: mysql-config-green
               defaultMode: 0777
 
 
