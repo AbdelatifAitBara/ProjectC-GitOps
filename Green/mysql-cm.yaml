@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mysql-config-green
+  namespace: green
 data:  # store initial SQL commands
   init.sql: |
     CREATE USER 'wordpress'@'%' IDENTIFIED BY 'password';

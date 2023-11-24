@@ -4,7 +4,7 @@ metadata:
   labels:
     app: product
   name: product
-  namespace: microservices
+  namespace: blue
 spec:
   replicas: 1
   selector:
@@ -32,7 +32,7 @@ metadata:
   labels:
     app: product
   name: product-service
-  namespace: microservices
+  namespace: blue
 spec:
   ports:
   - port: 8080
