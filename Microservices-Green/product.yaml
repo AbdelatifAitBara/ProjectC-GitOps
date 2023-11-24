@@ -40,6 +40,5 @@ spec:
     targetPort: 8080
   selector:
     app: product
-    namespace: green
   type: ClusterIP
 status:
