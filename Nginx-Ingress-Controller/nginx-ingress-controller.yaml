@@ -329,6 +329,52 @@ metadata:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx 
     app.kubernetes.io/version: 1.8.2
+data:
+  waf-conf: |
+    # Blacklist common attacks
+    blacklist {
+      "POST /phpmyadmin/";
+      "GET /etc/passwd";
+    }
+
+    # Allow DELETE and UPDATE methods
+    if ($request_method = DELETE) or ($request_method = UPDATE) {
+      return 200;
+    }
+
+    # Security checks
+    security_filter on;
+
+    # SQL injection protection
+    sql_injection_filter on;
+
+    # Cross-site scripting (XSS) protection  
+    xss_filter on;  
+
+    # HTTP protocol violations
+    protocol_violation drop;
+
+    # Limits
+    limit_req zone=one burst=10 nodelay;
+
+    # IP reputation blocking
+    geoip_count_block 127.0.0.1/8;
+
+    # Flood protection
+    limit_conn conn 10;
+    limit_rate_after 1024k;
+
+    # Common exploits
+    exploit_filter on; 
+
+    # Misc security checks
+    security_check_page /403.html;
+
+    # GeoIP database
+    include /etc/nginx/geoip/country.dat;
+
+    # Other file includes
+    include /etc/nginx/other.conf;
 
 ---
 apiVersion: v1
