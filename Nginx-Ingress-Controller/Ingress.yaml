@@ -10,8 +10,6 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/custom-http-errors: '404'
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      include /etc/nginx/owasp-modsecurity-crs/nginx-modsecurity.conf;
 spec:
   ingressClassName: nginx
   rules:
