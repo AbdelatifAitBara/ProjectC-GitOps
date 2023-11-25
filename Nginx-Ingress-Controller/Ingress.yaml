@@ -11,7 +11,7 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/custom-http-errors: '404'
     nginx.ingress.kubernetes.io/configuration-snippet: |
-      include configmaps/waf-config;
+      include /etc/nginx/owasp-modsecurity-crs/rules/;
 spec:
   ingressClassName: nginx
   rules:
