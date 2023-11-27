@@ -4,30 +4,27 @@ metadata:
   name: wordpress-pv-blue
   namespace: blue
 spec:
-  accessModes:
-  - ReadWriteOnce
-  awsElasticBlockStore:
-    fsType: gp3
-    volumeID: aws://eu-west-1a/vol-05328650f74f2254e
+  storageClassName: gp3-manual
   capacity:
     storage: 10Gi
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: gp3-retain
-  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  awsElasticBlockStore:
+    fsType: ext4
+    volumeID: aws://eu-west-1a/vol-05328650f74f2254e
+
+
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  labels:
-    app: wordpress
   name: wordpress-pvc-blue
   namespace: blue
 spec:
+  storageClassName: gp3-manual
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 8Gi
-  storageClassName: gp3-retain
-  volumeMode: Filesystem
-  volumeName: wordpress-pv-blue
+      storage: 10Gi
+  
