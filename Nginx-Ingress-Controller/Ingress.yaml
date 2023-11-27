@@ -4,17 +4,17 @@ metadata:
   name: ingress
   namespace: blue
   annotations:
-    cert-manager.io/issuer: letsencrypt-issuer-wordpress
+    #cert-manager.io/issuer: letsencrypt-issuer-wordpress
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/custom-http-errors: '404'
 spec:
-  tls:
-  - hosts:
-    - projetc.abdelatif-aitbara.link
-    secretName: projetc.abdelatif-aitbara.link
+# tls:
+# - hosts:
+#projetc.abdelatif-aitbara.link
+#   secretName: projetc.abdelatif-aitbara.link
   ingressClassName: nginx
   rules:
   - host: projetc.abdelatif-aitbara.link	
