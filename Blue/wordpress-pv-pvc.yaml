@@ -4,7 +4,7 @@ metadata:
   name: wordpress-pv-blue
   namespace: blue
 spec:
-  storageClassName: gp3-manual
+  storageClassName: manual
   capacity:
     storage: 10Gi
   accessModes:
@@ -21,7 +21,7 @@ metadata:
   name: wordpress-pvc-blue
   namespace: blue
 spec:
-  storageClassName: gp3-manual
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
