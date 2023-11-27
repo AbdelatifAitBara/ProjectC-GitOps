@@ -1,23 +1,26 @@
-# CSIPersistentVolume
-apiVersion: csi.storage.k8s.io/v1
-kind: CSIPersistentVolume
+---
+apiVersion: v1
+kind: PersistentVolume
 metadata:
   name: wordpress-pv-blue
+  namespace: blue
 spec:
+  accessModes:
+  - ReadWriteOnce
+  awsElasticBlockStore:
+    fsType: gp3
+    volumeID: aws://eu-west-1a/vol-05328650f74f2254e
   capacity:
-    storage: 10Gi 
-  csi: 
-    driver: ebs.csi.aws.com
-    volumeHandle: vol-05328650f74f2254e
-    volumeAttributes:
-      zone: eu-west-1a
-      
-
-# PersistentVolumeClaim
+    storage: 10Gi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: gp3-retain
+  volumeMode: Filesystem
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  labels:
+    app: wordpress
   name: wordpress-pvc-blue
   namespace: blue
 spec:
@@ -25,6 +28,7 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: manual
-  volumeName: wordpress-pv
+      storage: 8Gi
+  storageClassName: gp3-retain
+  volumeMode: Filesystem
+  volumeName: wordpress-pvc-blue
