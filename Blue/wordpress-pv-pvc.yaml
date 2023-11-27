@@ -10,7 +10,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   awsElasticBlockStore:
-    fsType: ext4
+    fsType: gp3
     volumeID: aws://eu-west-1a/vol-05328650f74f2254e
 
 
