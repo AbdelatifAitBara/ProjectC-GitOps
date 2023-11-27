@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
-  namespace: blue
+  namespace: green
   annotations:
     #cert-manager.io/issuer: letsencrypt-issuer-wordpress
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
