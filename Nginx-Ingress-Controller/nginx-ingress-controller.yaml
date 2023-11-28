@@ -318,21 +318,42 @@ subjects:
   name: ingress-nginx-admission
   namespace: ingress-nginx
 ---
+
+
 apiVersion: v1
-kind: ConfigMap 
+kind: ConfigMap
 metadata:
-  name: ingress-nginx-controller
+  name: ingress-nginx-controller 
   namespace: ingress-nginx
   labels:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx 
+    app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.8.2
 data:
   enable-modsecurity: "true"
   enable-owasp-modsecurity-crs: "true"
-  
+
+  secrules_file: |
+    /etc/nginx/modsecurity/modsecurity.conf
+    /etc/nginx/modsecurity/unicode.mapping
+    /etc/nginx/owasp-modsecurity-crs/nginx-modsecurity.conf
+
+  modsecurity_conf: |
+    Include /etc/nginx/modsecurity/modsecurity.conf
+    Include /etc/nginx/modsecurity/unicode.mapping
+    Include /etc/nginx/owasp-modsecurity-crs/nginx-modsecurity.conf
+
+  modsecurity_crs_conf: |
+    Include /etc/nginx/owasp-modsecurity-crs/crs-setup.conf
+    Include /etc/nginx/owasp-modsecurity-crs/rules/*.conf
+
+  owasp_crs: |
+    Include /etc/nginx/owasp-modsecurity-crs/crs-setup.conf
+    Include /etc/nginx/owasp-modsecurity-crs/rules/*.conf
+
+
 ---
 apiVersion: v1
 kind: Service
