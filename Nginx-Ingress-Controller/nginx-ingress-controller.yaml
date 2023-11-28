@@ -334,14 +334,11 @@ metadata:
 data:
   enable-modsecurity: "true"
   enable-owasp-modsecurity-crs: "true"
-
-  modsecurity_rules_file: |
-    Include /etc/nginx/modsecurity/*.conf
-
-  modsecurity_conf_file: |
-    Load OWASP ModSecurity Core Rule Set (OWASP-ModSecurity-CRS)
-    Include /etc/nginx/owasp-modsecurity-crs/*.conf
-
+  enable-waf: "true"
+  enable-waf-logs: "true"
+  enable-waf-security-headers: "true"
+  enable-waf-security-headers-ssl-redirect: "true"
+  enable-waf-security-headers-custom-http-errors: "true"
 
 ---
 apiVersion: v1
