@@ -335,23 +335,12 @@ data:
   enable-modsecurity: "true"
   enable-owasp-modsecurity-crs: "true"
 
-  secrules_file: |
-    /etc/nginx/modsecurity/modsecurity.conf
-    /etc/nginx/modsecurity/unicode.mapping
-    /etc/nginx/owasp-modsecurity-crs/nginx-modsecurity.conf
+  modsecurity_rules_file: |
+    Include /etc/nginx/modsecurity/*.conf
 
-  modsecurity_conf: |
-    Include /etc/nginx/modsecurity/modsecurity.conf
-    Include /etc/nginx/modsecurity/unicode.mapping
-    Include /etc/nginx/owasp-modsecurity-crs/nginx-modsecurity.conf
-
-  modsecurity_crs_conf: |
-    Include /etc/nginx/owasp-modsecurity-crs/crs-setup.conf
-    Include /etc/nginx/owasp-modsecurity-crs/rules/*.conf
-
-  owasp_crs: |
-    Include /etc/nginx/owasp-modsecurity-crs/crs-setup.conf
-    Include /etc/nginx/owasp-modsecurity-crs/rules/*.conf
+  modsecurity_conf_file: |
+    Load OWASP ModSecurity Core Rule Set (OWASP-ModSecurity-CRS)
+    Include /etc/nginx/owasp-modsecurity-crs/*.conf
 
 
 ---
