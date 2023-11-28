@@ -327,7 +327,7 @@ data:
     SecRequestBodyAccess On
     SecAuditLog /var/log/modsecurity_audit.log
     SecAuditLogParts ABCIJDEFHZ
-    SecAuditEngine RelevantOnly
+    SecAuditEngine Off
 kind: ConfigMap
 metadata:
   labels:
