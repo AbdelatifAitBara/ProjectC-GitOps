@@ -318,22 +318,26 @@ subjects:
   name: ingress-nginx-admission
   namespace: ingress-nginx
 ---
-
-
 apiVersion: v1
+data:
+  enable-modsecurity: "true"
+  enable-owasp-modsecurity-crs: "true"
+  modsecurity-snippet: |-
+    SecRuleEngine On
+    SecRequestBodyAccess On
+    SecAuditLog /var/log/modsecurity_audit.log
+    SecAuditLogParts ABCIJDEFHZ
+    SecAuditEngine RelevantOnly
 kind: ConfigMap
 metadata:
-  name: ingress-nginx-controller 
-  namespace: ingress-nginx
   labels:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: ingress-nginx
     app.kubernetes.io/version: 1.8.2
-data:
-  enable-modsecurity: "true"
-  enable-owasp-modsecurity-crs: "true"
+  name: ingress-nginx-modsecurity
+  namespace: ingress-nginx
 ---
 apiVersion: v1
 kind: Service
