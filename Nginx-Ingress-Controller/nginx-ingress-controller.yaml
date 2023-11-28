@@ -334,12 +334,6 @@ metadata:
 data:
   enable-modsecurity: "true"
   enable-owasp-modsecurity-crs: "true"
-  enable-waf: "true"
-  enable-waf-logs: "true"
-  enable-waf-security-headers: "true"
-  enable-waf-security-headers-ssl-redirect: "true"
-  enable-waf-security-headers-custom-http-errors: "true"
-
 ---
 apiVersion: v1
 kind: Service
