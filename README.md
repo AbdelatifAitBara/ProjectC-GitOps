@@ -1,8 +1,3 @@
-## Deploying My Monolothic Application & Microservices Using 🤍 ArgoCD 🤍 :
+- This Repository is part of my Project-C, it contains all the deployment manifests of my applications.
 
-- Deploy WordPress     = ✔
-- Ingress for WP       = ✔
-- Deploy Microservices = ✔
-- HAP                  = ✔
-- Test Blue Deployment = ✔
-- Blue/Green Deployment Works 100%
+- Project-C Repository Link: https://github.com/AbdelatifAitBara/ProjectC
